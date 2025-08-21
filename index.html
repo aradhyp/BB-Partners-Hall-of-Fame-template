@@ -7,27 +7,80 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Open Sans', sans-serif;
-            background-color: #f7fafc;
+            font-family: 'Lato', Arial, sans-serif;
+            background-color: #f4f8fb;
+            background-image: radial-gradient(circle at 20% 20%, #e6f2fb 10%, transparent 70%), 
+                              radial-gradient(circle at 80% 80%, #e6f2fb 10%, transparent 70%);
+            min-height: 100vh;
         }
         .font-montserrat {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Montserrat', Arial, sans-serif;
+            transition: letter-spacing 0.2s, font-weight 0.2s;
         }
-        .gradient-blue {
-            background: linear-gradient(90deg, #002d5b, #004b8d);
+        .sky-primary {
+            background: linear-gradient(90deg, #0072ce 0%, #003057 100%);
+        }
+        .sky-primary-text {
+            color: #003057;
+        }
+        .sky-secondary-text {
+            color: #52525b;
+        }
+        .sky-link {
+            color: #0072ce;
+            transition: color 0.2s;
+        }
+        .sky-link:hover {
+            color: #005ea6;
+            text-decoration: underline;
+        }
+        .sky-badge {
+            background-color: #e6f2fb;
+            color: #0072ce;
+            letter-spacing: 0.05em;
+        }
+        .sky-border {
+            border-color: #c0d4e7;
+        }
+        .sky-card {
+            background: #fff;
+            border: 1px solid #e0e8f1;
+            box-shadow: 0 4px 24px 0 rgba(0, 114, 206, 0.08);
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .sky-card:hover {
+            box-shadow: 0 8px 32px 0 rgba(0, 114, 206, 0.16);
+            transform: translateY(-2px) scale(1.01);
+        }
+        .fade-in {
+            animation: fadeIn 1s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(24px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        .metric-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: #0072ce;
+        }
+        @media (max-width: 768px) {
+            .sky-card {
+                margin-bottom: 1rem;
+            }
         }
     </style>
 </head>
-<body class="bg-gray-100">
+<body class="bg-[#f4f8fb]">
 
-    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg my-8">
+    <div class="max-w-4xl mx-auto sky-card shadow-lg rounded-xl my-10 fade-in">
         <!-- Header Section -->
-        <header class="gradient-blue text-white text-center py-12 px-6 rounded-t-lg">
-            <h1 class="font-montserrat font-extrabold text-4xl md:text-5xl">Heroes of Impact</h1>
-            <p class="mt-4 text-lg md:text-xl">Celebrating partner wins that drive mission impact</p>
+        <header class="sky-primary text-white text-center py-12 px-6 rounded-t-xl">
+            <h1 class="font-montserrat font-extrabold text-4xl md:text-5xl tracking-tight transition-all">Heroes of Impact</h1>
+            <p class="mt-4 text-lg md:text-xl font-lato">Celebrating partner wins that drive mission impact</p>
         </header>
 
         <main class="p-6 md:p-10">
@@ -35,41 +88,40 @@
             <section class="grid md:grid-cols-3 gap-8 items-center mb-12">
                 <!-- Left Column: Image/Logo -->
                 <div class="md:col-span-1 flex flex-col items-center justify-center">
-                    <img src="https://placehold.co/150x150/e2e8f0/333?text=Partner+Logo" alt="Partner Logo or Headshot" class="rounded-full w-36 h-36 object-cover border-4 border-white shadow-md">
-                    <span class="mt-4 inline-block bg-blue-100 text-blue-800 text-sm font-semibold px-4 py-1 rounded-full">Mission Multiplier</span>
+                    <img src="https://ui-avatars.com/api/?name=HopeTech&background=e2e8f0&color=333&size=150&rounded=true" alt="Partner Logo or Headshot" class="rounded-full w-36 h-36 object-cover border-4 border-white shadow-md transition-transform hover:scale-105">
+                    <span class="mt-4 inline-block sky-badge text-sm font-semibold px-4 py-1 rounded-full">Mission Multiplier</span>
                 </div>
-
                 <!-- Right Column: Text Box -->
                 <div class="md:col-span-2">
-                    <h2 class="font-montserrat font-bold text-2xl text-gray-800">HopeTech</h2>
-                    <p class="text-gray-500 mb-4">San Francisco, CA | Technology Partner</p>
+                    <h2 class="font-montserrat font-bold text-2xl sky-primary-text">HopeTech</h2>
+                    <p class="sky-secondary-text mb-4">San Francisco, CA | Technology Partner</p>
                     <div class="relative">
-                        <blockquote class="text-xl italic text-gray-700 border-l-4 border-blue-500 pl-6">
+                        <blockquote class="text-xl italic sky-secondary-text border-l-4 sky-border pl-6">
                             “Blackbaud helped us reduce implementation time by 40% and drive more donor engagement in 2 months than in the previous year.”
                         </blockquote>
-                        <p class="text-right mt-4 font-semibold text-gray-600">— Jane Doe, VP Partnerships, HopeTech</p>
+                        <p class="text-right mt-4 font-semibold text-sky-800">— Jane Doe, VP Partnerships, HopeTech</p>
                     </div>
                 </div>
             </section>
 
             <!-- Section 2: GTM Play That Worked -->
-            <section class="bg-gray-50 p-8 rounded-lg mb-12">
-                <h3 class="font-montserrat font-bold text-xl text-gray-800 mb-4">GTM Play That Worked</h3>
+            <section class="bg-[#e6f2fb] p-8 rounded-lg mb-12 border-l-4 border-[#0072ce]">
+                <h3 class="font-montserrat font-bold text-xl sky-primary-text mb-4">GTM Play That Worked</h3>
                 <div class="space-y-4">
                     <div>
-                        <h4 class="font-montserrat font-bold text-lg text-gray-700">Challenge:</h4>
-                        <p class="text-gray-600">Struggled to connect with larger nonprofits due to lengthy and complex onboarding processes.</p>
+                        <h4 class="font-montserrat font-bold text-lg sky-primary-text">Challenge:</h4>
+                        <p class="sky-secondary-text">Struggled to connect with larger nonprofits due to lengthy and complex onboarding processes.</p>
                     </div>
                     <div>
-                        <h4 class="font-montserrat font-bold text-lg text-gray-700">Strategy:</h4>
-                        <p class="text-gray-600">Developed a co-branded "QuickStart" package featuring a custom dashboard and a targeted email campaign to Blackbaud's customer base.</p>
+                        <h4 class="font-montserrat font-bold text-lg sky-primary-text">Strategy:</h4>
+                        <p class="sky-secondary-text">Developed a co-branded "QuickStart" package featuring a custom dashboard and a targeted email campaign to Blackbaud's customer base.</p>
                     </div>
                     <div>
-                        <h4 class="font-montserrat font-bold text-lg text-gray-700">Outcome:</h4>
+                        <h4 class="font-montserrat font-bold text-lg sky-primary-text">Outcome:</h4>
                         <div class="flex flex-wrap gap-4 mt-2">
-                            <span class="flex items-center bg-green-100 text-green-800 px-3 py-1 rounded-full">✅ <strong>25% Revenue Lift</strong></span>
-                            <span class="flex items-center bg-green-100 text-green-800 px-3 py-1 rounded-full">✅ <strong>2x Increase in Demos</strong></span>
-                            <span class="flex items-center bg-green-100 text-green-800 px-3 py-1 rounded-full">✅ <strong>30% Reduced Sales Cycle</strong></span>
+                            <span class="flex items-center bg-[#d4f4e8] text-[#118848] px-3 py-1 rounded-full font-semibold">✅ <strong class="ml-2">25% Revenue Lift</strong></span>
+                            <span class="flex items-center bg-[#d4f4e8] text-[#118848] px-3 py-1 rounded-full font-semibold">✅ <strong class="ml-2">2x Increase in Demos</strong></span>
+                            <span class="flex items-center bg-[#d4f4e8] text-[#118848] px-3 py-1 rounded-full font-semibold">✅ <strong class="ml-2">30% Reduced Sales Cycle</strong></span>
                         </div>
                     </div>
                 </div>
@@ -77,78 +129,81 @@
 
             <!-- Section 3: Metrics Table -->
             <section class="mb-12">
-                 <h3 class="font-montserrat font-bold text-xl text-center text-gray-800 mb-6">Key Performance Indicators</h3>
+                 <h3 class="font-montserrat font-bold text-xl text-center sky-primary-text mb-6">Key Performance Indicators</h3>
                 <div class="grid md:grid-cols-3 gap-6 text-center">
-                    <div class="bg-white p-6 rounded-lg border border-gray-200">
-                        <h4 class="font-montserrat font-bold text-lg text-gray-700 mb-2">Sales Cycle</h4>
+                    <div class="sky-card p-6 rounded-lg hover:shadow-xl transition-shadow">
+                        <div class="metric-icon">⏱️</div>
+                        <h4 class="font-montserrat font-bold text-lg sky-primary-text mb-2">Sales Cycle</h4>
                         <div class="flex justify-around items-center">
                             <div>
-                                <p class="text-gray-500 text-sm">Before</p>
+                                <p class="sky-secondary-text text-sm">Before</p>
                                 <p class="text-3xl font-bold text-gray-400">45 <span class="text-lg">days</span></p>
                             </div>
-                            <div class="text-green-500 text-2xl">→</div>
+                            <div class="text-[#0072ce] text-2xl">→</div>
                             <div>
-                                <p class="text-gray-500 text-sm">After</p>
-                                <p class="text-3xl font-bold text-green-600">31 <span class="text-lg">days</span></p>
+                                <p class="sky-secondary-text text-sm">After</p>
+                                <p class="text-3xl font-bold text-[#118848]">31 <span class="text-lg">days</span></p>
                             </div>
                         </div>
-                        <div class="w-full bg-gray-200 rounded-full h-2.5 mt-4">
-                          <div class="bg-green-500 h-2.5 rounded-full" style="width: 69%"></div>
+                        <div class="w-full bg-[#e0e8f1] rounded-full h-2.5 mt-4">
+                          <div class="bg-[#118848] h-2.5 rounded-full" style="width: 69%"></div>
                         </div>
                     </div>
-                    <div class="bg-white p-6 rounded-lg border border-gray-200">
-                        <h4 class="font-montserrat font-bold text-lg text-gray-700 mb-2">Conversion Rate</h4>
+                    <div class="sky-card p-6 rounded-lg hover:shadow-xl transition-shadow">
+                        <div class="metric-icon">📈</div>
+                        <h4 class="font-montserrat font-bold text-lg sky-primary-text mb-2">Conversion Rate</h4>
                          <div class="flex justify-around items-center">
                             <div>
-                                <p class="text-gray-500 text-sm">Before</p>
+                                <p class="sky-secondary-text text-sm">Before</p>
                                 <p class="text-3xl font-bold text-gray-400">12%</p>
                             </div>
-                            <div class="text-green-500 text-2xl">→</div>
+                            <div class="text-[#0072ce] text-2xl">→</div>
                             <div>
-                                <p class="text-gray-500 text-sm">After</p>
-                                <p class="text-3xl font-bold text-green-600">27%</p>
+                                <p class="sky-secondary-text text-sm">After</p>
+                                <p class="text-3xl font-bold text-[#118848]">27%</p>
                             </div>
                         </div>
-                        <div class="w-full bg-gray-200 rounded-full h-2.5 mt-4">
-                          <div class="bg-green-500 h-2.5 rounded-full" style="width: 55%"></div>
+                        <div class="w-full bg-[#e0e8f1] rounded-full h-2.5 mt-4">
+                          <div class="bg-[#118848] h-2.5 rounded-full" style="width: 55%"></div>
                         </div>
                     </div>
-                    <div class="bg-white p-6 rounded-lg border border-gray-200">
-                        <h4 class="font-montserrat font-bold text-lg text-gray-700 mb-2">ARR Contribution</h4>
+                    <div class="sky-card p-6 rounded-lg hover:shadow-xl transition-shadow">
+                        <div class="metric-icon">💰</div>
+                        <h4 class="font-montserrat font-bold text-lg sky-primary-text mb-2">ARR Contribution</h4>
                          <div class="flex justify-around items-center">
                             <div>
-                                <p class="text-gray-500 text-sm">Before</p>
+                                <p class="sky-secondary-text text-sm">Before</p>
                                 <p class="text-3xl font-bold text-gray-400">$48K</p>
                             </div>
-                            <div class="text-green-500 text-2xl">→</div>
+                            <div class="text-[#0072ce] text-2xl">→</div>
                             <div>
-                                <p class="text-gray-500 text-sm">After</p>
-                                <p class="text-3xl font-bold text-green-600">$112K</p>
+                                <p class="sky-secondary-text text-sm">After</p>
+                                <p class="text-3xl font-bold text-[#118848]">$112K</p>
                             </div>
                         </div>
-                        <div class="w-full bg-gray-200 rounded-full h-2.5 mt-4">
-                          <div class="bg-green-500 h-2.5 rounded-full" style="width: 80%"></div>
+                        <div class="w-full bg-[#e0e8f1] rounded-full h-2.5 mt-4">
+                          <div class="bg-[#118848] h-2.5 rounded-full" style="width: 80%"></div>
                         </div>
                     </div>
                 </div>
             </section>
 
             <!-- Section 4: Learnings + Next Move -->
-            <section class="bg-blue-50 border-l-4 border-blue-500 p-8 rounded-lg mb-12">
+            <section class="bg-[#f4f8fb] border-l-4 border-[#0072ce] p-8 rounded-lg mb-12">
                 <div class="flex items-start">
-                    <div class="text-3xl mr-4 text-blue-500">🧠</div>
+                    <div class="text-3xl mr-4 text-[#0072ce]">🧠</div>
                     <div>
-                        <blockquote class="italic text-gray-700">
+                        <blockquote class="italic sky-secondary-text">
                             “Next time, we’d align GTM messaging earlier with Blackbaud’s ecosystem insights to be even more targeted.”
                         </blockquote>
                     </div>
                 </div>
-                <hr class="my-6 border-blue-200">
+                <hr class="my-6 border-[#e6f2fb]">
                 <div class="flex items-start">
-                    <div class="text-3xl mr-4 text-blue-500">🔜</div>
+                    <div class="text-3xl mr-4 text-[#0072ce]">🔜</div>
                     <div>
-                        <h4 class="font-bold text-gray-800">Next GTM Move:</h4>
-                        <p class="text-gray-700">Launching K-12 impact dashboard in August with integrated CRM + donor personas.</p>
+                        <h4 class="font-bold sky-primary-text">Next GTM Move:</h4>
+                        <p class="sky-secondary-text">Launching K-12 impact dashboard in August with integrated CRM + donor personas.</p>
                     </div>
                 </div>
             </section>
@@ -156,18 +211,17 @@
         </main>
 
         <!-- Section 5: CTA Banner -->
-        <footer class="bg-gray-800 text-white text-center py-10 px-6 rounded-b-lg">
+        <footer class="bg-[#003057] text-white text-center py-10 px-6 rounded-b-xl">
             <h2 class="font-montserrat font-bold text-2xl md:text-3xl mb-6">Want to Be Our Next Hall of Famer?</h2>
             <div class="flex flex-col md:flex-row justify-center items-center gap-4">
-                <a href="mailto:partners@blackbaud.com" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 w-full md:w-auto">
+                <a href="mailto:partners@blackbaud.com" class="bg-[#0072ce] hover:bg-[#005ea6] text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 w-full md:w-auto shadow-md hover:scale-105">
                     📩 partners@blackbaud.com
                 </a>
-                <a href="#" class="bg-gray-600 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 w-full md:w-auto">
+                <a href="#" class="bg-[#52525b] hover:bg-[#35353b] text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 w-full md:w-auto sky-link shadow-md hover:scale-105">
                     🔗 Blackbaud Partner Hub
                 </a>
             </div>
         </footer>
-
     </div>
 
 </body>
