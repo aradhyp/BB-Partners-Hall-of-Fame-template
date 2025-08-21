@@ -3,172 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heroes of Impact</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <title>Partners Hall of Fame</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=BLKBSans:wght@300;400;700&display=swap');
+
+        :root {
+            --sky-text-color-default: #212327;
+            --sky-text-color-deemphasized: #686c73;
+            --sky-background-color-page-default: #fcfcfc;
+            --sky-background-color-container-default: #ffffff;
+            --sky-background-color-primary-dark: #1870b8;
+            --sky-highlight-color-info: #00b4f1;
+        }
+
         body {
-            font-family: 'Open Sans', sans-serif;
-            background-color: #f7fafc;
+            font-family: 'BLKBSans', sans-serif;
+            background-color: var(--sky-background-color-page-default);
+            color: var(--sky-text-color-default);
+            margin: 0;
+            padding: 20px;
         }
-        .font-montserrat {
-            font-family: 'Montserrat', sans-serif;
+
+        .container {
+            background-color: var(--sky-background-color-container-default);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        .gradient-blue {
-            background: linear-gradient(90deg, #002d5b, #004b8d);
+
+        h1 {
+            font-size: 32px;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 400;
+            margin-top: 20px;
+        }
+
+        .partner {
+            margin: 15px 0;
+            padding: 15px;
+            border-left: 5px solid var(--sky-highlight-color-info);
+            background-color: #f0f8ff;
+        }
+
+        .partner-name {
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        .metrics {
+            font-size: 16px;
+            color: var(--sky-text-color-deemphasized);
         }
     </style>
 </head>
-<body class="bg-gray-100">
+<body>
+    <div class="container">
+        <h1>Partners Hall of Fame</h1>
+        <h2>Top Contributors</h2>
 
-    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg my-8">
-        <!-- Header Section -->
-        <header class="gradient-blue text-white text-center py-12 px-6 rounded-t-lg">
-            <h1 class="font-montserrat font-extrabold text-4xl md:text-5xl">Heroes of Impact</h1>
-            <p class="mt-4 text-lg md:text-xl">Celebrating partner wins that drive mission impact</p>
-        </header>
+        <div class="partner">
+            <div class="partner-name" contenteditable="true">Partner Name 1</div>
+            <div class="metrics" contenteditable="true">Metric: 1200 Points</div>
+        </div>
 
-        <main class="p-6 md:p-10">
-            <!-- Section 1: Partner Hero Block -->
-            <section class="grid md:grid-cols-3 gap-8 items-center mb-12">
-                <!-- Left Column: Image/Logo -->
-                <div class="md:col-span-1 flex flex-col items-center justify-center">
-                    <img src="https://placehold.co/150x150/e2e8f0/333?text=Partner+Logo" alt="Partner Logo or Headshot" class="rounded-full w-36 h-36 object-cover border-4 border-white shadow-md">
-                    <span class="mt-4 inline-block bg-blue-100 text-blue-800 text-sm font-semibold px-4 py-1 rounded-full">Mission Multiplier</span>
-                </div>
+        <div class="partner">
+            <div class="partner-name" contenteditable="true">Partner Name 2</div>
+            <div class="metrics" contenteditable="true">Metric: 950 Points</div>
+        </div>
 
-                <!-- Right Column: Text Box -->
-                <div class="md:col-span-2">
-                    <h2 class="font-montserrat font-bold text-2xl text-gray-800">HopeTech</h2>
-                    <p class="text-gray-500 mb-4">San Francisco, CA | Technology Partner</p>
-                    <div class="relative">
-                        <blockquote class="text-xl italic text-gray-700 border-l-4 border-blue-500 pl-6">
-                            “Blackbaud helped us reduce implementation time by 40% and drive more donor engagement in 2 months than in the previous year.”
-                        </blockquote>
-                        <p class="text-right mt-4 font-semibold text-gray-600">— Jane Doe, VP Partnerships, HopeTech</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Section 2: GTM Play That Worked -->
-            <section class="bg-gray-50 p-8 rounded-lg mb-12">
-                <h3 class="font-montserrat font-bold text-xl text-gray-800 mb-4">GTM Play That Worked</h3>
-                <div class="space-y-4">
-                    <div>
-                        <h4 class="font-montserrat font-bold text-lg text-gray-700">Challenge:</h4>
-                        <p class="text-gray-600">Struggled to connect with larger nonprofits due to lengthy and complex onboarding processes.</p>
-                    </div>
-                    <div>
-                        <h4 class="font-montserrat font-bold text-lg text-gray-700">Strategy:</h4>
-                        <p class="text-gray-600">Developed a co-branded "QuickStart" package featuring a custom dashboard and a targeted email campaign to Blackbaud's customer base.</p>
-                    </div>
-                    <div>
-                        <h4 class="font-montserrat font-bold text-lg text-gray-700">Outcome:</h4>
-                        <div class="flex flex-wrap gap-4 mt-2">
-                            <span class="flex items-center bg-green-100 text-green-800 px-3 py-1 rounded-full">✅ <strong>25% Revenue Lift</strong></span>
-                            <span class="flex items-center bg-green-100 text-green-800 px-3 py-1 rounded-full">✅ <strong>2x Increase in Demos</strong></span>
-                            <span class="flex items-center bg-green-100 text-green-800 px-3 py-1 rounded-full">✅ <strong>30% Reduced Sales Cycle</strong></span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Section 3: Metrics Table -->
-            <section class="mb-12">
-                 <h3 class="font-montserrat font-bold text-xl text-center text-gray-800 mb-6">Key Performance Indicators</h3>
-                <div class="grid md:grid-cols-3 gap-6 text-center">
-                    <div class="bg-white p-6 rounded-lg border border-gray-200">
-                        <h4 class="font-montserrat font-bold text-lg text-gray-700 mb-2">Sales Cycle</h4>
-                        <div class="flex justify-around items-center">
-                            <div>
-                                <p class="text-gray-500 text-sm">Before</p>
-                                <p class="text-3xl font-bold text-gray-400">45 <span class="text-lg">days</span></p>
-                            </div>
-                            <div class="text-green-500 text-2xl">→</div>
-                            <div>
-                                <p class="text-gray-500 text-sm">After</p>
-                                <p class="text-3xl font-bold text-green-600">31 <span class="text-lg">days</span></p>
-                            </div>
-                        </div>
-                        <div class="w-full bg-gray-200 rounded-full h-2.5 mt-4">
-                          <div class="bg-green-500 h-2.5 rounded-full" style="width: 69%"></div>
-                        </div>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg border border-gray-200">
-                        <h4 class="font-montserrat font-bold text-lg text-gray-700 mb-2">Conversion Rate</h4>
-                         <div class="flex justify-around items-center">
-                            <div>
-                                <p class="text-gray-500 text-sm">Before</p>
-                                <p class="text-3xl font-bold text-gray-400">12%</p>
-                            </div>
-                            <div class="text-green-500 text-2xl">→</div>
-                            <div>
-                                <p class="text-gray-500 text-sm">After</p>
-                                <p class="text-3xl font-bold text-green-600">27%</p>
-                            </div>
-                        </div>
-                        <div class="w-full bg-gray-200 rounded-full h-2.5 mt-4">
-                          <div class="bg-green-500 h-2.5 rounded-full" style="width: 55%"></div>
-                        </div>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg border border-gray-200">
-                        <h4 class="font-montserrat font-bold text-lg text-gray-700 mb-2">ARR Contribution</h4>
-                         <div class="flex justify-around items-center">
-                            <div>
-                                <p class="text-gray-500 text-sm">Before</p>
-                                <p class="text-3xl font-bold text-gray-400">$48K</p>
-                            </div>
-                            <div class="text-green-500 text-2xl">→</div>
-                            <div>
-                                <p class="text-gray-500 text-sm">After</p>
-                                <p class="text-3xl font-bold text-green-600">$112K</p>
-                            </div>
-                        </div>
-                        <div class="w-full bg-gray-200 rounded-full h-2.5 mt-4">
-                          <div class="bg-green-500 h-2.5 rounded-full" style="width: 80%"></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Section 4: Learnings + Next Move -->
-            <section class="bg-blue-50 border-l-4 border-blue-500 p-8 rounded-lg mb-12">
-                <div class="flex items-start">
-                    <div class="text-3xl mr-4 text-blue-500">🧠</div>
-                    <div>
-                        <blockquote class="italic text-gray-700">
-                            “Next time, we’d align GTM messaging earlier with Blackbaud’s ecosystem insights to be even more targeted.”
-                        </blockquote>
-                    </div>
-                </div>
-                <hr class="my-6 border-blue-200">
-                <div class="flex items-start">
-                    <div class="text-3xl mr-4 text-blue-500">🔜</div>
-                    <div>
-                        <h4 class="font-bold text-gray-800">Next GTM Move:</h4>
-                        <p class="text-gray-700">Launching K-12 impact dashboard in August with integrated CRM + donor personas.</p>
-                    </div>
-                </div>
-            </section>
-
-        </main>
-
-        <!-- Section 5: CTA Banner -->
-        <footer class="bg-gray-800 text-white text-center py-10 px-6 rounded-b-lg">
-            <h2 class="font-montserrat font-bold text-2xl md:text-3xl mb-6">Want to Be Our Next Hall of Famer?</h2>
-            <div class="flex flex-col md:flex-row justify-center items-center gap-4">
-                <a href="mailto:partners@blackbaud.com" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 w-full md:w-auto">
-                    📩 partners@blackbaud.com
-                </a>
-                <a href="#" class="bg-gray-600 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 w-full md:w-auto">
-                    🔗 Blackbaud Partner Hub
-                </a>
-            </div>
-        </footer>
-
+        <div class="partner">
+            <div class="partner-name" contenteditable="true">Partner Name 3</div>
+            <div class="metrics" contenteditable="true">Metric: 875 Points</div>
+        </div>
     </div>
-
 </body>
 </html>
